@@ -1,9 +1,11 @@
+import Button from "./Button/Button"
+import Input from "./Input/Input"
 
-const Form = () => {
+const Form = ({handleClick, handleChange}) => {
   return (
     <form>
-        <input type="date" />
-        <button>Buscar</button>
+        <Input handleChange={handleChange}/>
+        <Button handleClick={handleClick}/>
     </form>
   )
 }

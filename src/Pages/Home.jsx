@@ -1,5 +1,7 @@
 import Form from "../Components/Form";
+import Texto from "../Components/Texto/Texto";
 import { useEffect, useState } from "react";
+
 const Home = () => {
   const [data, setData] = useState("");
   const [dados, setDados] = useState({});
@@ -12,19 +14,27 @@ const Home = () => {
     const json = await response.json("");
     setDados(json)
   }
+
+  const handleChange = (e) => {
+    setData(e.target.value)
+    console.log(data);
+  }
+
   const handleClick = (e) => {
     e.preventDefault();
-    setData(e.target.value);
+    handleRequisicao();
+
   };
+
   useEffect(() => {
     console.log(dados)
-    handleRequisicao();
-  }, [data]);
+  }, [dados]);
 
   return (
     <div>
       <div>
-        <Form func={handleClick} />
+        <Form handleChange={handleChange} handleClick={handleClick} />
+        <Texto titulo={dados.title} texto={dados.explanation} img={dados.url} mediaType={dados.media_type} />
       </div>
       <div></div>
     </div>
