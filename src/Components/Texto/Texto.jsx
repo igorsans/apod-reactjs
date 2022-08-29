@@ -1,15 +1,18 @@
-import React from 'react'
+import React from 'react';
+import S from './Texto.module.css';
 
-const Texto = ({titulo, texto, img, mediaType}) => {
+const Texto = ({ titulo, texto, img, mediaType }) => {
   return (
-    <div>
-        <h1>{titulo}</h1>
-        <p>{texto}</p>
-        {mediaType == "image" ? <img src={img} alt="" /> : <iframe width="700px" height="450px" src={img}/>}
-        
-
+    <div className={S.div}>
+      <h1 className={S.h1}>{titulo}</h1>
+      <p className={S.p}>{texto}</p>
+      {mediaType == 'image' ? (
+        <img className={S.img} src={img} alt="" />
+      ) : (
+        <iframe src={img} />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Texto
+export default Texto;

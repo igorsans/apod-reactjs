@@ -1,13 +1,14 @@
-import Button from "./Button/Button"
-import Input from "./Input/Input"
+import Button from './Button/Button';
+import Input from './Input/Input';
+import S from './Form.module.css';
 
-const Form = ({handleClick, handleChange}) => {
+const Form = ({ handleClick, handleChange }) => {
   return (
-    <form>
-        <Input handleChange={handleChange}/>
-        <Button handleClick={handleClick}/>
+    <form className={S.form}>
+      <Input className={S.input} handleChange={handleChange} />
+      <Button className={S.button} handleClick={handleClick} />
     </form>
-  )
-}
+  );
+};
 
-export default Form
+export default Form;

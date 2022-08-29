@@ -1,9 +1,15 @@
-import React from 'react'
+import React from 'react';
 
-const Input = ({handleChange}) => {
+const Input = ({ handleChange, className }) => {
   return (
-    <input type="date" name="" id="" onChange={handleChange} />
-  )
-}
+    <input
+      className={className}
+      type="date"
+      name=""
+      id=""
+      onChange={handleChange}
+    />
+  );
+};
 
-export default Input
+export default Input;
